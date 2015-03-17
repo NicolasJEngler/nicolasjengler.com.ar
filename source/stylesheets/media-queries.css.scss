@@ -1,0 +1,29 @@
+@media screen and (max-width: 480px) {
+  .content {
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    ul {
+      li {
+        a {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .content {
+    ul {
+      li {
+        margin: 5px 10px;
+      }
+    }
+  }
+}
