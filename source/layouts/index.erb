@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8">
 
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta name="description" content="Nicolás Joel Engler is a graphic designer and front-end developer. Get to know him a little bit better by visiting some of the links in this site">
     <meta name="keywords" content="graphic, design, designer, front-end, frontend, developer, html, css, javascript, jquery, framework, website, web, technology, trends">
     <meta name="author" content="Nicolás Joel Engler">
@@ -10,17 +14,12 @@
     <link rel="icon" href="favicon.png" type="image/png" />
     <link rel="shortcut icon" href="favicon.ico" />
 
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "Nicolás J. Engler" %></title>
 
     <%= stylesheet_link_tag "all" %>
     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Roboto:400,100italic,100,300,300italic,400italic,500,500italic,700,900,700italic,900italic" %>
     <%= stylesheet_link_tag "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" %>
-
-    <%= javascript_include_tag  "all" %>
   </head>
 
   <body class="<%= page_classes %>">
