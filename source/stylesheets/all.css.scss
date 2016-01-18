@@ -22,7 +22,7 @@ body {
 
 body {
   background: #f1f1f1;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .content {
@@ -40,8 +40,10 @@ body {
     margin-top: 0;
     font-size: 42px;
     font-weight: 200;
+    font-family: 'Playfair Display', serif;
 
     em {
+      font-style: normal;
       border-bottom: 1px solid rgba(#2e2e2e,.15);
     }
   }
@@ -76,16 +78,42 @@ body {
         color: #2e2e2e;
 
         i {
-          -webkit-transition: transform .3s ease-in-out;
-                  transition: transform .3s ease-in-out;
+          position: relative;
+          top: 0;
+          -webkit-transition: top .15s ease-out;
+                  transition: top .15s ease-out;
         }
 
         &:hover {
           text-decoration: none;
+
           i {
-            -webkit-transform: scale(1.25,1.25);
-                    transform: scale(1.25,1.25);
+            top: -5px;
           }
+        }
+
+        &[title="Behance"] {
+          color: #1769ff;
+        }
+
+        &[title="LinkedIn"] {
+          color: #0077b5;
+        }
+
+        &[title="Dribbble"] {
+          color: #ea4c89;
+        }
+
+        &[title="Twitter"] {
+          color: #55acee;
+        }
+
+        &[title="GitHub"] {
+          color: #333333;
+        }
+
+        &[title="CodePen"] {
+          color: #616f67;
         }
       }
     }
