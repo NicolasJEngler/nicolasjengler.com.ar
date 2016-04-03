@@ -13,108 +13,119 @@ html {
 }
 
 /* Site's custom CSS */
-
-html,
 body {
+  height: 100vh;
+  width: 100vw;
+  background: black url(../images/bg.jpg) no-repeat center center / cover;
+  font-family: 'Playfair Display', sans-serif;
+}
+
+.info {
   height: 100%;
   width: 100%;
-}
+  display: table;
+  background: rgba(black,.5);
 
-body {
-  background: #f1f1f1;
-  font-family: 'Lato', sans-serif;
-}
+  .text {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 35px;
+    position: relative;
+    z-index: 1;
 
-.content {
-  width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 0 15px;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translate3d(0,-50%,0);
-          transform: translate3d(0,-50%,0);
-  color: #2e2e2e;
+    h1 {
+      text-transform: uppercase;
+      color: white;
+      font-weight: 900;
+      font-size: 64px;
+      letter-spacing: 5px;
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+    }
 
-  h1 {
-    margin-top: 0;
-    font-size: 42px;
-    font-weight: 200;
-    font-family: 'Playfair Display', serif;
-
-    em {
-      font-style: normal;
-      border-bottom: 1px solid rgba(#2e2e2e,.15);
+    h2 {
+      font-family: 'Playfair Display', sans-serif;
+      font-weight: normal;
+      font-size: 24px;
+      color: white;
+      letter-spacing: 2px;
+      margin: 0;
     }
   }
 
-  h2 {
-    font-size: 24px;
-    font-weight: 300;
+  .particles {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+
+    .circle,
+    .square,
+    .cross,
+    .triangle,
+    .arrow {
+      position: absolute;
+    }
+
+    .circle {
+      top: 15%;
+      left: 5%;
+    }
+
+    .cross  {
+      top: 8%;
+      left: 55%;
+    }
+
+    .triangle {
+      top: 85%;
+      left: 10%
+    }
+
+    .square {
+      top: 75%;
+      left: 60%;
+    }
+
+    .arrow {
+      top: 45%;
+      left: 80%;
+      -webkit-transform: rotate(24deg);
+              transform: rotate(24deg);
+    }
   }
 
-  ul {
-    width: 100%;
-    padding: 0;
-    margin: 30px 0 0 0;
-    list-style-type: none;
-    text-align: left;
+  .social {
+    display: table-cell;
+    vertical-align: middle;
+    width: 120px;
+    background: rgba(black,.35);
+    padding: 35px;
+    position: relative;
+    z-index: 3;
 
-    li {
-      display: inline-block;
-      margin: 5px 15px;
+    a {
+      text-decoration: none;
+      display: block;
+      margin: 0 auto;
+      transition: all .5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+      vertical-align: middle;
 
-      &:first-child {
-        margin-left: 0;
+      img {
+        display: block;
+        margin: 0 auto 40px;
       }
 
       &:last-child {
-        margin-right: 0;
+        img {
+          margin-bottom: 0 !important;
+        }
       }
 
-      a {
-        text-decoration: none;
-        font-size: 28px;
-        color: #2e2e2e;
-
-        i {
-          position: relative;
-          top: 0;
-          -webkit-transition: top .15s ease-out;
-                  transition: top .15s ease-out;
-        }
-
-        &:hover {
-          text-decoration: none;
-
-          i {
-            top: -5px;
-          }
-        }
-
-        &[title="Behance"] {
-          color: #1769ff;
-        }
-
-        &[title="LinkedIn"] {
-          color: #0077b5;
-        }
-
-        &[title="Dribbble"] {
-          color: #ea4c89;
-        }
-
-        &[title="Twitter"] {
-          color: #55acee;
-        }
-
-        &[title="GitHub"] {
-          color: #333333;
-        }
-
-        &[title="CodePen"] {
-          color: #616f67;
-        }
+      &:hover {
+        opacity: .5;
       }
     }
   }

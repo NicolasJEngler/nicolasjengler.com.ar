@@ -18,8 +18,7 @@
     <title><%= current_page.data.title || "Nicolás J. Engler" %></title>
 
     <%= stylesheet_link_tag "all" %>
-    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Playfair+Display:400|Lato:300,500" %>
-    <%= stylesheet_link_tag "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lato:900|Playfair+Display" %>
 
     <!-- Analytics tracking code -->
     <script>
@@ -35,5 +34,11 @@
 
   <body class="<%= page_classes %>">
     <%= yield %>
+
+    <%= javascript_include_tag 'vendor/jquery-1.12.2.min' %>
+    <%= javascript_include_tag 'vendor/jquery.parallaxify.min' %>
+    <script>
+      $.parallaxify();
+    </script>
   </body>
 </html>
