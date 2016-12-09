@@ -38,6 +38,19 @@
     <%= javascript_include_tag 'vendor/jquery-1.12.2.min' %>
     <%= javascript_include_tag 'vendor/jquery.parallaxify.min' %>
     <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').then(function(reg) {
+          console.log('Yey!', reg);
+        }).catch(function(err) {
+          console.log('Boo!', err);
+        });
+      }
+
+      var toggleSWStyles = function() {
+        var bodyEl = document.getElementById('full-content');
+        bodyEl.classList.add('sw-running');
+      };
+
       $.parallaxify();
     </script>
   </body>
