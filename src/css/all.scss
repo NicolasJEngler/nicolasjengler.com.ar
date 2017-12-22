@@ -3,10 +3,12 @@
 @import '_partials/fonts';
 @import '_partials/easings';
 @import '_partials/animations';
+@import '_partials/utils';
 @import '_partials/global';
 
 /* Modules styles */
 // i.e.: `@import '_modules/home-slider';`
+@import '_modules/initial';
 
 /* UI styles */
 @import '_ui/buttons';
