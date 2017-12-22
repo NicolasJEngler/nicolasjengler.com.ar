@@ -2,19 +2,31 @@
   &__title {
     color: #ffffff;
     margin: 0 0 30px;
-    font-size: 2.25em;
+    font-size: 1.25em;
     font-weight: bold;
     letter-spacing: 2px;
+
+    @media screen and (min-width: 1081px) {
+      font-size: 2.25em;
+    }
   }
 
   &__description {
     margin: 0 auto;
     max-width: 480px;
-    font-size: 1.125em;
+    font-size: .875em;
     font-weight: normal;
     color: var(--color-gray-subtle);
     letter-spacing: 0;
-    line-height: 24px;
+    line-height: 16px;
+
+    @media screen and (min-width: 769px) {
+      line-height: 24px;
+    }
+
+    @media screen and (min-width: 1081px) {
+      font-size: 1.125em;
+    }
   }
 
   .section__inner {
