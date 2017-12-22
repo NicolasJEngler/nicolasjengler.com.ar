@@ -49,9 +49,142 @@
       ga('create', 'UA-36841035-6', 'auto');
       ga('send', 'pageview');
     </script>
+
+    <style>
+      @-webkit-keyframes blinking-text {
+        0% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0;;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes blinking-text {
+        0% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0;;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .preloader-backdrop {
+        position: fixed;
+        z-index: 9998;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        transition: all 2s ease 2s;
+      }
+
+      .preloader-backdrop.is-done {
+        opacity: 0;
+      }
+
+      .preloader-backdrop.is-gone {
+        display: none;
+      }
+
+      .preloader {
+        position: fixed;
+        z-index: 9999;
+        width: 128px;
+        height: 128px;
+        background: white;
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        left: 50%;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+                transform: translate3d(-50%, -50%, 0);
+        -webkit-transition: all 2s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+                transition: all 2s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+      }
+
+      .preloader::before {
+        content: 'Loading...';
+        font-weight: bold;
+        font-size: 1.125em;
+        letter-spacing: 1px;
+        color: #ffffff;
+        position: absolute;
+        top: auto;
+        bottom: -50px;
+        right: auto;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+        -webkit-animation: blinking-text 2s infinite normal linear forwards 0s;
+                animation: blinking-text 2s infinite normal linear forwards 0s;
+      }
+
+      .preloader::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        left: 50%;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+                transform: translate3d(-50%, -50%, 0);
+        -webkit-transition: all 2s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+                transition: all 2s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        width: 54px;
+        height: 54px;
+        background: #000000;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .preloader.is-done {
+        top: 30px;
+        left: 30px;
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+        width: 32px;
+        height: 32px;
+      }
+
+      .preloader.is-done::before {
+        display: none;
+      }
+
+      .preloader.is-done::after {
+        width: 14px;
+        height: 14px;
+      }
+
+      @media screen and (min-width: 1081px) {
+        .preloader.is-done {
+          top: 60px;
+          left: 30px;
+        }
+      }
+
+      .preloader.is-gone {
+        display: none;
+      }
+    </style>
   </head>
 
   <body>
+    <div class="preloader-backdrop js-preloader-backdrop"></div>
+    <div class="preloader js-preloader"></div>
+
     <div id="fullpage" class="fullpage-container">
       <section class="section initial">
         <div class="section__inner text-center">

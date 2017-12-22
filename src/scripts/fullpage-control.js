@@ -49,7 +49,7 @@ $(document).ready(function() {
     // Design
     controlArrows: false,
     verticalCentered: true,
-    fixedElements: '.navigation, .grid-ornament, .nav-button, .animated-box',
+    fixedElements: '.navigation, .grid-ornament, .nav-button, .animated-box, .preloader, .preloader-backdrop',
     responsiveSlides: false,
     parallax: false,
     parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
