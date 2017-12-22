@@ -93,6 +93,13 @@ gulp.task('copy-images', function() {
     .pipe(gulp.dest('./dist/images'));
 });
 
+// gulp copy-favicons - copies files inside favicons folder
+gulp.task('copy-favicons', function() {
+  return gulp.src('./src/favicons/**/*.{ico,png,svg,gif,json,xml}')
+    .pipe(gulp.dest('./dist/favicons'));
+});
+
+// gulp copy-fonts - copies files inside the fonts folder
 gulp.task('copy-fonts', function() {
   return gulp.src('./src/fonts/**/*.{svg,woff,woff2,ttf,otf,eot}')
     .pipe(gulp.dest('./dist/fonts'));
@@ -113,11 +120,12 @@ gulp.task('watch', ['build'], function() {
   gulp.watch('./src/vendor/css/**/*.css', ['vendor-css']);
   gulp.watch('./src/vendor/js/**/*.js', ['vendor-js']);
   gulp.watch('./src/images/**/*.{svg,png,jpg,gif}', ['copy-images']);
+  gulp.watch('./src/favicons/**/*.{ico,png,svg,gif,json,xml}', ['copy-favicons']);
   gulp.watch('./src/fonts/**/*.{svg,woff,woff2,ttf,otf,eot}', ['copy-fonts']);
   gulp.watch('./src/**/*.html', ['copy']);
   gulp.watch('./src/**/*.php', ['copy']);
 });
 
-gulp.task('build', ['css', 'vendor-css', 'js', 'vendor-js', 'copy-fonts', 'copy-images', 'copy']);
+gulp.task('build', ['css', 'vendor-css', 'js', 'vendor-js', 'copy-fonts', 'copy-images', 'copy-favicons', 'copy']);
 
 gulp.task('default', ['webserver', 'watch']);
