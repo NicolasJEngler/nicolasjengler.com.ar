@@ -1,0 +1,28 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: white;
+  overflow-x: hidden !important;
+}
+
+.clearfix {
+  *zoom: 1;
+
+  &::after {
+    clear: both;
+  }
+
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+}
