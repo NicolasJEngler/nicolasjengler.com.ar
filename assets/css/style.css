@@ -1,0 +1,53 @@
+:root {
+  --background-body: #000000;
+  --background: #2e2e2e;
+  --background-alt: #353535;
+  --selection: #444444;
+  --links: #f2f2f2;
+  --focus: #dadada;
+  --code: #dadada;
+  --button-hover: #dadada;
+  --scrollbar-thumb-hover: #dadada;
+}
+
+body {
+  max-width: 640px;
+  font-family: 'Inconsolata', monospace;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin-left: 15px;
+  }
+}
+
+a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a[href^='mailto\:']::before,
+a[href^='tel\:']::before,
+a[href^='sms\:']::before {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.ending-isologo {
+  display: inline-block;
+  margin-left: 4px;
+  position: relative;
+  top: 1px;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
