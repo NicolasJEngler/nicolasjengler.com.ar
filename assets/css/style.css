@@ -51,3 +51,8 @@ a[href^='sms\:']::before {
 .mb-0 {
   margin-bottom: 0 !important;
 }
+
+.my-25 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
